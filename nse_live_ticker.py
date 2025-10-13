@@ -1,9 +1,5 @@
-# =============================================================================
+# nse_live_ticker.py
 # ULTIMATE NSE LIVE TICKER - COMBINED & IMPROVED
-# =============================================================================
-
-# Install required packages
-!pip install yfinance pandas numpy requests beautifulsoup4 plotly --quiet
 
 import yfinance as yf
 import pandas as pd
@@ -15,11 +11,6 @@ import datetime
 from IPython.display import display, clear_output, HTML
 import warnings
 warnings.filterwarnings('ignore')
-
-print("🚀 ULTIMATE NSE LIVE TICKER STARTING...")
-print("📍 Combining Yahoo Finance + NSE India APIs")
-print("🔄 Real-time updates with fallback system")
-print("=" * 70)
 
 class UltimateNseTicker:
     def __init__(self):
@@ -359,10 +350,6 @@ class UltimateTickerDisplay:
         
         return header_html + self.create_scrolling_ticker() + overview_html + self.create_detailed_view()
 
-# =============================================================================
-# MAIN FUNCTIONS
-# =============================================================================
-
 def test_ultimate_ticker():
     """Test the ultimate ticker with single update"""
     display_obj = UltimateTickerDisplay()
@@ -395,13 +382,5 @@ def start_ultimate_ticker(interval=15):
     except KeyboardInterrupt:
         print("\n🛑 Ticker stopped by user")
 
-# =============================================================================
-# RUN THE ULTIMATE TICKER
-# =============================================================================
-
 if __name__ == "__main__":
-    # Test with single update
     test_ultimate_ticker()
-    
-    # Uncomment below line for continuous updates
-    # start_ultimate_ticker()
